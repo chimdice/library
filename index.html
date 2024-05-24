@@ -8,6 +8,37 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Welcome to the Library</h1>
+    <h3>Please add your book to the collection</h3>
+    <form action="" method="post">
+        <div class="form-element">
+            <label for="book-title">Title:</label>
+            <input type="text" name="bookTitle" id="book-title">
+        </div>
+        <div class="form-element">
+            <label for="book-author">Authour:</label>
+            <input type="text" name="bookAuthor" id="book-author">
+        </div>
+        <div class="form-element">
+            <label for="book-pages">Number of Pages:</label>
+            <input type="number" name="bookPages" id="book-pages">
+        </div>
+        <h4>Have you read this book?</h4>
+        <div class="form-element">
+            <input type="radio" id="read-true" name="readBook" name="read-true">
+            <label for="read-true">True</label>
+        </div>
+        <div class="form-element">
+            <input type="radio" id="read-false" name="readBook" name="read-false">
+            <label for="read-false">False</label>
+        </div>
+        <div class="form-element">
+            <button type="submit">Submit</button>
+        </div>
+        <div class="form-element">
+            <button type="reset">Reset</button>
+        </div>
+    </form>
     <table>
         <thead>
             <tr>

@@ -1,3 +1,31 @@
 table {
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+tr, th {
+    padding: 10px 100px 10px 100px;
+}
+
+th {
+    border-bottom: 1px solid black;
+}
+
+form {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 3fr)  2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+form h4 {
+    margin: 0px;
+}
+
+input[type='radio'] {
+    padding: 0px;
 }
