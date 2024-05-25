@@ -1,14 +1,26 @@
+:root {
+    --orange: #fef9c3;
+}
+
+body {
+    background-color: var(--orange);
+}
+
 table {
     border: 1px solid black;
     width: 50svw;
 }
 
 tr, th {
-    padding: 10px 100px 10px 100px;
     text-align: center; 
     vertical-align: middle;
 }
 
+tr {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+}
 
 form {
     display: inline-grid;

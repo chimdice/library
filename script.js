@@ -34,7 +34,7 @@ function displayLibrary () {
             if (key != 'info') {
                 let tableElement = document.createElement("td");
                 tableElement.textContent = book[key];
-                tableElement.setAttribute("style","padding: 10px 100px 10px 100px; text-align: center; vertical-align: middle");
+                tableElement.setAttribute("style","text-align: center; vertical-align: middle");
                 row.appendChild(tableElement);
             };
         };
