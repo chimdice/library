@@ -34,12 +34,50 @@ function displayLibrary () {
             if (key != 'info') {
                 let tableElement = document.createElement("td");
                 tableElement.textContent = book[key];
+                tableElement.setAttribute("style","padding: 10px 100px 10px 100px; text-align: center; vertical-align: middle");
                 row.appendChild(tableElement);
             };
         };
 
+        const removeButton = document.createElement("button");
+        removeButton.setAttribute("id", "removebook");
+        removeButton.textContent = "delete book";
+        removeButton.addEventListener("click", () => {
+            const parent = removeButton.parentNode;
+            console.log("works");
+            parent.remove();
+        });
+        row.appendChild(removeButton);
+
+        const changeRead = document.createElement("button");
+        changeRead.textContent = "Change Read Status";
+        changeRead.addEventListener("click", () => {
+            let readStatus = changeRead.previousElementSibling.previousElementSibling;
+            console.log(readStatus);
+            if (readStatus.textContent == "true") {
+                readStatus.textContent = "false";
+            } else {
+                readStatus.textContent = "true"
+            };
+        });
+        row.appendChild(changeRead);
         libraryTable.appendChild(row);
     };
 };
 
-addBookToLibrary("JoeMama", "Joe", 10, true);
+const submit = document.querySelector("#submit-button");
+
+submit.addEventListener("click", (event) => {
+    event.preventDefault();
+    let bookTitle = document.querySelector("#book-title").value;
+    let bookAuthor = document.querySelector("#book-author").value;
+    let bookPages = document.querySelector("#book-pages").value;
+    let bookRead = document.querySelector("input[name=readBook]:checked");
+
+    let check = bookRead.getAttribute("id");
+    let bookReadStatus = document.querySelector(`label[for=${check}]`).textContent;
+    let status = bookReadStatus === "true";
+
+    addBookToLibrary(bookTitle, bookAuthor, bookPages, status);
+    displayLibrary();
+});
