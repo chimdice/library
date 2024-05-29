@@ -1,12 +1,15 @@
 const library = [];
 const libraryTable = document.querySelector("tbody");
 
-function createBook (title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = function () {
+class createBook {
+    constructor (title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    };
+
+    get info () {
         let readStatus = "not read yet";
 
         if (this.read) {
@@ -44,7 +47,6 @@ function displayLibrary () {
         removeButton.textContent = "delete book";
         removeButton.addEventListener("click", () => {
             const parent = removeButton.parentNode;
-            console.log("works");
             parent.remove();
         });
         row.appendChild(removeButton);
@@ -53,7 +55,6 @@ function displayLibrary () {
         changeRead.textContent = "Change Read Status";
         changeRead.addEventListener("click", () => {
             let readStatus = changeRead.previousElementSibling.previousElementSibling;
-            console.log(readStatus);
             if (readStatus.textContent == "true") {
                 readStatus.textContent = "false";
             } else {
