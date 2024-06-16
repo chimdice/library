@@ -37,3 +37,7 @@ form h4 {
 input[type='radio'] {
     padding: 0px;
 }
+
+.error {
+    border: 2px solid red;
+}
